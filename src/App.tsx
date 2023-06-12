@@ -55,10 +55,21 @@ function App() {
         </div>
       </div>
       {/* userSearchBar */}
-      <div className="userSearchBar">
+      <div
+        // className="userSearchBar contentBackgroundLightMode"
+        className={
+          isDarkMode
+            ? "userSearchBar contentBackgroundDarkMode"
+            : "userSearchBar contentBackgroundLightMode"
+        }
+      >
         <img src={SearchIcon} alt="SearchIcon" className="userSearchIcon" />
         <input
-          className="userInput"
+          className={
+            isDarkMode
+              ? "userInput contentBackgroundDarkMode textDarkMode"
+              : "userInput contentBackgroundLightMode textLightMode"
+          }
           placeholder="Search GitHub username…"
           type="text"
           name="userSearch"

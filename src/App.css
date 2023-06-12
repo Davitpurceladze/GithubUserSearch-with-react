@@ -53,10 +53,17 @@
 /* userSearchBar style */
 .userSearchBar {
   display: grid;
-  grid-template-columns: 15% 60% 25%;
-  background-color: var(--contentBackgroundLightMode);
+  grid-template-columns: 15% 55% 30%;
   height: 65px;
   border-radius: 15px;
+}
+
+.contentBackgroundLightMode {
+  background-color: var(--contentBackgroundLightMode);
+}
+
+.contentBackgroundDarkMode {
+  background-color: var(--contentBackgroundDarkMode);
 }
 
 .userInput {
@@ -66,12 +73,23 @@
   outline: none;
 }
 
+.textDarkMode {
+  color: var(--textDarkMode);
+}
+
+.textLightMode {
+  color: var(--textLightMode);
+}
+
 .userSearchButton {
   border: none;
   background-color: #0079ff;
   border-radius: 10px;
   margin: 6px;
   color: var(--textDarkMode);
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: 700;
 }
 
 .userSearchIcon {
