@@ -3,6 +3,7 @@ import { useState } from "react";
 import MoonIcon from "./assets/icon-moon.svg";
 import SunIcon from "./assets/icon-sun.svg";
 import SearchIcon from "./assets/icon-search.svg";
+import UserIcon from "./assets/Oval.svg";
 // import axiosClient from "./axiosClient";
 
 function App() {
@@ -56,7 +57,6 @@ function App() {
       </div>
       {/* userSearchBar */}
       <div
-        // className="userSearchBar contentBackgroundLightMode"
         className={
           isDarkMode
             ? "userSearchBar contentBackgroundDarkMode"
@@ -85,6 +85,39 @@ function App() {
         >
           Search
         </button>
+      </div>
+      {/* userInfo */}
+      <div className="userInfoContainer contentBackgroundLightMode">
+        <div className="userIconAndNameContainer">
+          <div className="userIcon">
+            <img src={UserIcon} alt="UserIcon" />
+          </div>
+          <div className="userNameContainer">
+            <p className="userName">The Octocat</p>
+            <p className="userLink">@octocat</p>
+            <p className="userJoined">Joined 25 Jan 2011</p>
+          </div>
+        </div>
+        <div className="userInfo">
+          <div className="userBio">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          </div>
+          <div className="userFollowers">
+            <div>
+              <div className="repos">Repos</div>
+              <p>8</p>
+            </div>
+            <div>
+              <div className="followers">Followers</div>
+              <p>3934</p>
+            </div>
+            <div>
+              <div className="following">Following</div>
+              <p>56</p>
+            </div>
+          </div>
+          <div>four icons</div>
+        </div>
       </div>
     </div>
   );
