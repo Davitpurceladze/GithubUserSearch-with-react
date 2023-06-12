@@ -1,0 +1,79 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 24px;
+}
+
+.appLightMode {
+  background-color: var(--backgroundLightMode);
+}
+
+.appDarkMode {
+  background-color: var(--backgroundDarkMode);
+}
+
+/* title style  */
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.titleText {
+  font-size: 26px;
+  line-height: 38.51px;
+  font-family: monospace;
+  font-weight: 700;
+  /* color: #222731; */
+}
+
+.titleTextLightMode {
+  color: var(--titleTextLightMode);
+}
+
+.titleTextDarkMode {
+  color: var(--titleTextDarkMode);
+}
+.darkModeSwitcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  line-height: 19.25px;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.darkModeSwitcher p {
+  letter-spacing: 2.5px;
+  color: #4b6a9b;
+}
+
+/* userSearchBar style */
+.userSearchBar {
+  display: grid;
+  grid-template-columns: 15% 60% 25%;
+  background-color: var(--contentBackgroundLightMode);
+  height: 65px;
+  border-radius: 15px;
+}
+
+.userInput {
+  border: none;
+  font-family: monospace;
+  font-size: 13px;
+  outline: none;
+}
+
+.userSearchButton {
+  border: none;
+  background-color: #0079ff;
+  border-radius: 10px;
+  margin: 6px;
+  color: var(--textDarkMode);
+}
+
+.userSearchIcon {
+  margin: auto;
+}
