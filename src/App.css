@@ -14,7 +14,7 @@
 }
 
 /* title style  */
-.title {
+/* .title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
@@ -25,7 +25,6 @@
   line-height: 38.51px;
   font-family: monospace;
   font-weight: 700;
-  /* color: #222731; */
 }
 
 .titleTextLightMode {
@@ -34,8 +33,9 @@
 
 .titleTextDarkMode {
   color: var(--titleTextDarkMode);
-}
-.darkModeSwitcher {
+} */
+
+/* .darkModeSwitcher {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,7 @@
 .darkModeSwitcher p {
   letter-spacing: 2.5px;
   color: #4b6a9b;
-}
+} */
 
 /* userSearchBar style */
 .userSearchBar {

@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import MoonIcon from "./assets/icon-moon.svg";
-import SunIcon from "./assets/icon-sun.svg";
+import Header from "./Components/Header/Header";
 import SearchIcon from "./assets/icon-search.svg";
 import UserIcon from "./assets/Oval.svg";
 import UserLocation from "./assets/icon-location.svg";
@@ -23,6 +22,10 @@ function App() {
     setUserName(userNameValue);
   };
 
+  const handleDarkMode = (): void => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   // sent request to github
   // const searchUser = async () => {
   //   const response = await axiosClient.get(userName);
@@ -33,36 +36,8 @@ function App() {
 
   return (
     <div className={isDarkMode ? "app appDarkMode" : "app  appLightMode"}>
-      {/* title and dark/light switcher */}
-      <div className="title">
-        <p
-          className={
-            isDarkMode
-              ? "titleText titleTextDarkMode"
-              : "titleText titleTextLightMode"
-          }
-        >
-          devfinder
-        </p>
-        <div
-          className="darkModeSwitcher"
-          onClick={() => {
-            setIsDarkMode(!isDarkMode);
-          }}
-        >
-          {isDarkMode ? (
-            <div className="darkModeSwitcher">
-              <p>LIGHT</p>
-              <img src={SunIcon} alt="SunIcon" />
-            </div>
-          ) : (
-            <div className="darkModeSwitcher">
-              <p>DARK</p>
-              <img src={MoonIcon} alt="MoonIcon" />
-            </div>
-          )}
-        </div>
-      </div>
+      <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
+
       {/* userSearchBar */}
       <div
         className={
