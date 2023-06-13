@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 24px;
+  padding: 32px 24px 0px 24px;
 }
 
 .appLightMode {
@@ -98,7 +98,7 @@
 
 /* userInfo */
 .userInfoContainer {
-  margin-top: 16px;
+  margin-top: 26px;
   padding: 24px;
   border-radius: 15px;
 }
@@ -128,7 +128,6 @@
   margin-top: 6px;
   font-size: 13px;
   font-family: monospace;
-  color: #697c9a;
 }
 
 /* userInfo style */
@@ -139,20 +138,27 @@
 
 .userBio {
   font-size: 13px;
+  line-height: 25px;
   font-family: monospace;
-  color: var(--textLightMode);
 }
 
 .userFollowers {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f6f8ff;
   height: auto;
   width: auto;
   padding: 18px 15px;
   border-radius: 10px;
   margin-top: 23px;
+}
+
+.userFollowersLightModeBackground {
+  background-color: var(--followersBackgroundLightMode);
+}
+
+.userFollowersDarkModeBackground {
+  background-color: var(--followersBackgroundDarkMode);
 }
 
 .userFollowers div {
@@ -168,11 +174,28 @@
 .following {
   font-size: 11px;
   font-family: monospace;
-  color: var(--textLightMode);
+  /* color: var(--textLightMode); */
 }
 
 .userFollowers div p {
   font-size: 16px;
   font-family: monospace;
   font-weight: 700;
+}
+
+/* footer */
+.footerContainer {
+  margin-top: 24px;
+}
+
+.footerItem {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  font-size: 13px;
+  font-family: monospace;
+  margin-top: 17px;
+}
+
+.UserLocation {
+  fill: red;
 }
