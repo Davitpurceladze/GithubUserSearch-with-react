@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Header from "./Components/Header/Header";
-import SearchIcon from "./assets/icon-search.svg";
+import UserSearchBar from "./Components/UserSearchBar/UserSearchBar";
 import UserIcon from "./assets/Oval.svg";
 import UserLocation from "./assets/icon-location.svg";
 import UserLocationDarkMode from "./assets/icon-location-DarkMode.svg";
@@ -37,39 +37,8 @@ function App() {
   return (
     <div className={isDarkMode ? "app appDarkMode" : "app  appLightMode"}>
       <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
+      <UserSearchBar isDarkMode={isDarkMode} handleUserName={handleUserName} />
 
-      {/* userSearchBar */}
-      <div
-        className={
-          isDarkMode
-            ? "userSearchBar contentBackgroundDarkMode"
-            : "userSearchBar contentBackgroundLightMode"
-        }
-      >
-        <img src={SearchIcon} alt="SearchIcon" className="userSearchIcon" />
-        <input
-          className={
-            isDarkMode
-              ? "userInput contentBackgroundDarkMode textDarkMode"
-              : "userInput contentBackgroundLightMode textLightMode"
-          }
-          placeholder="Search GitHub username…"
-          type="text"
-          name="userSearch"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-            handleUserName(e.target.value);
-          }}
-        />
-        <button
-          className="userSearchButton"
-          onClick={() => {
-            // searchUser();
-          }}
-        >
-          Search
-        </button>
-      </div>
-      {/* <div className="userInfoContainer contentBackgroundLightMode"> */}
       <div
         className={
           isDarkMode

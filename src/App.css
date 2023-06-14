@@ -51,12 +51,12 @@
 } */
 
 /* userSearchBar style */
-.userSearchBar {
+/* .userSearchBar {
   display: grid;
   grid-template-columns: 15% 55% 30%;
   height: 65px;
   border-radius: 15px;
-}
+} */
 
 .contentBackgroundLightMode {
   background-color: var(--contentBackgroundLightMode);
@@ -66,12 +66,12 @@
   background-color: var(--contentBackgroundDarkMode);
 }
 
-.userInput {
+/* .userInput {
   border: none;
   font-family: monospace;
   font-size: 13px;
   outline: none;
-}
+} */
 
 .textDarkMode {
   color: var(--textDarkMode);
@@ -81,7 +81,7 @@
   color: var(--textLightMode);
 }
 
-.userSearchButton {
+/* .userSearchButton {
   border: none;
   background-color: var(--lightBlue);
   border-radius: 10px;
@@ -94,7 +94,7 @@
 
 .userSearchIcon {
   margin: auto;
-}
+} */
 
 /* userInfo */
 .userInfoContainer {
