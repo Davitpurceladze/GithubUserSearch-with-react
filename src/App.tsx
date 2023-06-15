@@ -2,16 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./Components/Header/Header";
 import UserSearchBar from "./Components/UserSearchBar/UserSearchBar";
-import UserIcon from "./assets/Oval.svg";
-import UserLocation from "./assets/icon-location.svg";
-import UserLocationDarkMode from "./assets/icon-location-DarkMode.svg";
-import UserLink from "./assets/icon-website.svg";
-import UserLinkDarkMode from "./assets/icon-website-DarkMode.svg";
-import UserTwitter from "./assets/icon-twitter.svg";
-import UserTwitterDarkMode from "./assets/icon-twitter-DarkMode.svg";
-import UserCompany from "./assets/icon-company.svg";
-import UserCompanyDarkMode from "./assets/icon-company-DarkMode.svg";
-// import axiosClient from "./axiosClient";
+import UserInfo from "./Components/UserInfo/UserInfo";
 
 function App() {
   const [userName, setUserName] = useState<string>();
@@ -38,132 +29,7 @@ function App() {
     <div className={isDarkMode ? "app appDarkMode" : "app  appLightMode"}>
       <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
       <UserSearchBar isDarkMode={isDarkMode} handleUserName={handleUserName} />
-
-      <div
-        className={
-          isDarkMode
-            ? "userInfoContainer contentBackgroundDarkMode"
-            : "userInfoContainer contentBackgroundLightMode"
-        }
-      >
-        {/* userInfo */}
-        <div className="userIconAndNameContainer">
-          <div className="userIcon">
-            <img src={UserIcon} alt="UserIcon" />
-          </div>
-          <div className="userNameContainer">
-            {/* <p className="userName textDarkMode">The Octocat</p> */}
-            <p className={isDarkMode ? "userName textDarkMode" : "userName  "}>
-              The Octocat
-            </p>
-
-            <p className="userLink">@octocat</p>
-            {/* <p className="userJoined">Joined 25 Jan 2011</p> */}
-            <p
-              className={
-                isDarkMode
-                  ? " textDarkMode userJoined  "
-                  : "textLightMode userJoined  "
-              }
-            >
-              Joined 25 Jan 2011
-            </p>
-          </div>
-        </div>
-        <div className="userInfo">
-          {/* <div className="userBio"> */}
-          <div
-            className={
-              isDarkMode ? "userBio textDarkMode" : "userBio textLightMode"
-            }
-          >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-          </div>
-          {/* <div className="userFollowers userFollowersLightModeBackground"> */}
-          <div
-            className={
-              isDarkMode
-                ? "userFollowers userFollowersDarkModeBackground"
-                : "userFollowers userFollowersLightModeBackground"
-            }
-          >
-            <div>
-              <div
-                className={
-                  isDarkMode ? "repos textDarkMode" : "repos textLightMode"
-                }
-              >
-                Repos
-              </div>
-              <p className={isDarkMode ? "textDarkMode" : ""}>8</p>
-            </div>
-            <div>
-              <div
-                className={
-                  isDarkMode
-                    ? "followers textDarkMode"
-                    : "followers textLightMode"
-                }
-              >
-                Followers
-              </div>
-              <p className={isDarkMode ? "textDarkMode" : ""}>3934</p>
-            </div>
-            <div>
-              <div
-                className={
-                  isDarkMode
-                    ? "following textDarkMode"
-                    : "following textLightMode"
-                }
-              >
-                Following
-              </div>
-              <p className={isDarkMode ? "textDarkMode" : ""}>56</p>
-            </div>
-          </div>
-          {/* footer */}
-          <div className="footerContainer">
-            <div className="footerItem">
-              <img
-                src={isDarkMode ? UserLocationDarkMode : UserLocation}
-                alt="UserLocation"
-                className="UserLocation"
-              />
-              <p className={isDarkMode ? "textDarkMode" : "textLightMode"}>
-                san francisco
-              </p>
-            </div>
-            <div className="footerItem">
-              <img
-                src={isDarkMode ? UserLinkDarkMode : UserLink}
-                alt="UserLocation"
-              />
-              <p className={isDarkMode ? "textDarkMode" : "textLightMode"}>
-                san francisco
-              </p>
-            </div>
-            <div className="footerItem">
-              <img
-                src={isDarkMode ? UserTwitterDarkMode : UserTwitter}
-                alt="UserLocation"
-              />
-              <p className={isDarkMode ? "textDarkMode" : "textLightMode"}>
-                san francisco
-              </p>
-            </div>
-            <div className="footerItem">
-              <img
-                src={isDarkMode ? UserCompanyDarkMode : UserCompany}
-                alt="UserLocation"
-              />
-              <p className={isDarkMode ? "textDarkMode" : "textLightMode"}>
-                san francisco
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <UserInfo isDarkMode={isDarkMode} />
     </div>
   );
 }

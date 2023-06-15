@@ -1,0 +1,11 @@
+.personalInfoContainer {
+  margin-top: 24px;
+}
+
+.personalInfoItem {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  font-size: 13px;
+  font-family: monospace;
+  margin-top: 17px;
+}

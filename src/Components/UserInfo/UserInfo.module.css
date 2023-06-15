@@ -1,0 +1,42 @@
+.userInfoContainer {
+  margin-top: 26px;
+  padding: 24px;
+  border-radius: 15px;
+}
+
+.userIconAndNameContainer {
+  display: flex;
+  align-items: center;
+}
+
+.userNameContainer {
+  margin-left: 19px;
+}
+
+.userName {
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.userLink {
+  color: var(--lightBlue);
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.userJoined {
+  margin-top: 6px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.userInfo {
+  margin-top: 34px;
+}
+
+.userBio {
+  font-size: 13px;
+  line-height: 25px;
+  font-family: monospace;
+}
