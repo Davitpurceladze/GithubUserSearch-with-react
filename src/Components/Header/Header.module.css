@@ -27,9 +27,17 @@
   line-height: 19.25px;
   gap: 16px;
   cursor: pointer;
+  font-weight: 700;
 }
 
-.darkModeSwitcher p {
+.isTextLight {
+  letter-spacing: 2.5px;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.isTextDark {
   letter-spacing: 2.5px;
   color: #4b6a9b;
+  font-family: monospace;
 }

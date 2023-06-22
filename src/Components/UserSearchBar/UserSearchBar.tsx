@@ -4,6 +4,7 @@ import SearchIcon from "../../assets/icon-search.svg";
 interface Props {
   isDarkMode: boolean;
   handleUserName: (userNameValue: string) => void;
+  searchUser: () => void;
 }
 
 function UserSearchBar(props: Props) {
@@ -36,7 +37,7 @@ function UserSearchBar(props: Props) {
       <button
         className={styles.userSearchButton}
         onClick={() => {
-          // searchUser();
+          props.searchUser();
         }}
       >
         Search

@@ -1,38 +1,19 @@
-.userFollowers {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: auto;
-  width: auto;
-  padding: 18px 15px;
-  border-radius: 10px;
-  margin-top: 23px;
-}
-
-.userFollowersLightModeBackground {
-  background-color: var(--followersBackgroundLightMode);
-}
-
-.userFollowersDarkModeBackground {
-  background-color: var(--followersBackgroundDarkMode);
-}
-.userFollowers div {
+.followersItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
-}
-
-.repos,
-.followers,
-.following {
   font-size: 11px;
   font-family: monospace;
 }
 
-.userFollowers div p {
+.followersItem p {
   font-size: 16px;
   font-family: monospace;
   font-weight: 700;
+}
+
+.followersParagraph {
+  color: #2b3442;
 }

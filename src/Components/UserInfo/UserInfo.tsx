@@ -1,11 +1,24 @@
 import styles from "./UserInfo.module.css";
 import Followers from "./Followers/Followers";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
-import UserIcon from "../../assets/Oval.svg";
 
 interface Props {
   isDarkMode: boolean;
+  data: object | undefined;
+  followersArray: any;
+  personalInfoArray: any;
+  date: any;
 }
+
+const aboutBio = (data: any) => {
+  if (data) {
+    if (data.bio === null) {
+      return "This profile has no bio";
+    } else {
+      return data.bio;
+    }
+  }
+};
 
 function UserInfo(props: Props) {
   return (
@@ -18,7 +31,11 @@ function UserInfo(props: Props) {
     >
       <div className={styles.userIconAndNameContainer}>
         <div>
-          <img src={UserIcon} alt="UserIcon" />
+          <img
+            className={styles.avatarIcon}
+            src={props.data ? props.data.avatar_url : ""}
+            alt="avatarIcon"
+          />
         </div>
         <div className={styles.userNameContainer}>
           <p
@@ -28,10 +45,12 @@ function UserInfo(props: Props) {
                 : `${styles.userName}`
             }
           >
-            The Octocat
+            {props.data ? props.data.name : "The Octocat"}
           </p>
 
-          <p className={styles.userLink}>@octocat</p>
+          <p className={styles.userLink}>
+            {`@${props.data ? props.data.login : "@octocat"}`}
+          </p>
           <p
             className={
               props.isDarkMode
@@ -39,7 +58,7 @@ function UserInfo(props: Props) {
                 : `textLightMode ${styles.userJoined}`
             }
           >
-            Joined 25 Jan 2011
+            {props.date}
           </p>
         </div>
       </div>
@@ -52,11 +71,37 @@ function UserInfo(props: Props) {
               : `${styles.userBio} textLightMode`
           }
         >
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <p>{aboutBio(props.data)}</p>
         </div>
 
-        <Followers isDarkMode={props.isDarkMode} />
-        <PersonalInfo isDarkMode={props.isDarkMode} />
+        {/* followers */}
+        <div
+          className={
+            props.isDarkMode
+              ? `${styles.userFollowersContainer} ${styles.userFollowersDarkModeBackground}`
+              : `${styles.userFollowersContainer} ${styles.userFollowersLightModeBackground}`
+          }
+        >
+          {props.followersArray.map((item: any) => (
+            <Followers
+              isDarkMode={props.isDarkMode}
+              name={item.name}
+              amount={item.amount}
+              key={item.id}
+            />
+          ))}
+        </div>
+
+        {/* personal information */}
+        {props.personalInfoArray.map((item: any) => (
+          <PersonalInfo
+            isDarkMode={props.isDarkMode}
+            LightModeIcon={item.LightModeIcon}
+            DarkModeIcon={item.DarkModeIcon}
+            info={item.info}
+            key={item.id}
+          />
+        ))}
       </div>
     </div>
   );

@@ -27,12 +27,12 @@ function Header(props: Props) {
       >
         {props.isDarkMode ? (
           <div className={styles.darkModeSwitcher}>
-            <p>LIGHT</p>
+            <p className={styles.isTextLight}>LIGHT</p>
             <img src={SunIcon} alt="SunIcon" />
           </div>
         ) : (
           <div className={styles.darkModeSwitcher}>
-            <p>DARK</p>
+            <p className={styles.isTextDark}>DARK</p>
             <img src={MoonIcon} alt="MoonIcon" />
           </div>
         )}

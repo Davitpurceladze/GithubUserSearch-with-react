@@ -2,6 +2,8 @@ import styles from "./Followers.module.css";
 
 interface Props {
   isDarkMode: boolean;
+  name: string;
+  amount: number;
 }
 
 function Followers(props: Props) {
@@ -9,48 +11,18 @@ function Followers(props: Props) {
     <div
       className={
         props.isDarkMode
-          ? `${styles.userFollowers} ${styles.userFollowersDarkModeBackground}`
-          : `${styles.userFollowers} ${styles.userFollowersLightModeBackground}`
+          ? `${styles.followersItem} textDarkMode`
+          : `${styles.followersItem} textLightMode`
       }
     >
-      <div>
-        <div
-          className={
-            props.isDarkMode
-              ? `${styles.repos} textDarkMode`
-              : `${styles.repos} textLightMode`
-          }
-        >
-          Repos
-        </div>
-        <p className={props.isDarkMode ? "textDarkMode" : ""}>8</p>
-      </div>
-
-      <div>
-        <div
-          className={
-            props.isDarkMode
-              ? `${styles.followers} textDarkMode`
-              : `${styles.followers} textLightMode`
-          }
-        >
-          Followers
-        </div>
-        <p className={props.isDarkMode ? "textDarkMode" : ""}>3934</p>
-      </div>
-
-      <div>
-        <div
-          className={
-            props.isDarkMode
-              ? `${styles.following} textDarkMode`
-              : `${styles.following} textLightMode`
-          }
-        >
-          Following
-        </div>
-        <p className={props.isDarkMode ? "textDarkMode" : ""}>56</p>
-      </div>
+      <div>{props.name}</div>
+      <p
+        className={
+          props.isDarkMode ? " textDarkMode" : styles.followersParagraph
+        }
+      >
+        {props.amount}
+      </p>
     </div>
   );
 }
