@@ -5,18 +5,10 @@ import UserSearchBar from "./Components/UserSearchBar/UserSearchBar";
 import UserInfo from "./Components/UserInfo/UserInfo";
 import axiosClient from "./axiosClient";
 import { v4 as uuidv4 } from "uuid";
-import { UserData } from "./userInterface";
+import { UserDataType } from "./userInterface";
 import { FollowerType } from "./userInterface";
 import { PersonalInfoType } from "./userInterface";
-
-import UserLocation from "./assets/icon-location.svg";
-import UserLocationDarkMode from "./assets/icon-location-DarkMode.svg";
-import UserLink from "./assets/icon-website.svg";
-import UserLinkDarkMode from "./assets/icon-website-DarkMode.svg";
-import UserTwitter from "./assets/icon-twitter.svg";
-import UserTwitterDarkMode from "./assets/icon-twitter-DarkMode.svg";
-import UserCompany from "./assets/icon-company.svg";
-import UserCompanyDarkMode from "./assets/icon-company-DarkMode.svg";
+import { iconObj } from "./assets/iconObj";
 
 // need to catch errors
 // responsive design
@@ -24,7 +16,7 @@ import UserCompanyDarkMode from "./assets/icon-company-DarkMode.svg";
 function App() {
   const [userName, setUserName] = useState<string>("octocat");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [data, setData] = useState<UserData | undefined>();
+  const [data, setData] = useState<UserDataType | undefined>();
   const [date, setDate] = useState<string | undefined>();
 
   const [followersArray, setFollowersArray] = useState<FollowerType[]>([]);
@@ -57,29 +49,29 @@ function App() {
 
       // personalInfoArray
       personalInfoArr.push({
-        LightModeIcon: UserLocation,
-        DarkModeIcon: UserLocationDarkMode,
+        LightModeIcon: iconObj.UserLocation,
+        DarkModeIcon: iconObj.UserLocationDarkMode,
         info: data.location,
         id: uuidv4(),
       });
 
       personalInfoArr.push({
-        LightModeIcon: UserLink,
-        DarkModeIcon: UserLinkDarkMode,
+        LightModeIcon: iconObj.UserLink,
+        DarkModeIcon: iconObj.UserLinkDarkMode,
         info: data.blog,
         id: uuidv4(),
       });
 
       personalInfoArr.push({
-        LightModeIcon: UserTwitter,
-        DarkModeIcon: UserTwitterDarkMode,
+        LightModeIcon: iconObj.UserTwitter,
+        DarkModeIcon: iconObj.UserTwitterDarkMode,
         info: data.twitter_username,
         id: uuidv4(),
       });
 
       personalInfoArr.push({
-        LightModeIcon: UserCompany,
-        DarkModeIcon: UserCompanyDarkMode,
+        LightModeIcon: iconObj.UserCompany,
+        DarkModeIcon: iconObj.UserCompanyDarkMode,
         info: data.company,
         id: uuidv4(),
       });

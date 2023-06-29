@@ -1,4 +1,4 @@
-export interface UserData {
+export interface UserDataType {
   login: string;
   id: number;
   node_id: string;

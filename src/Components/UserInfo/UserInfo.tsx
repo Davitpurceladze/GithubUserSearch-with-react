@@ -1,13 +1,13 @@
 import styles from "./UserInfo.module.css";
 import Followers from "./Followers/Followers";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
-import { UserData } from "../../userInterface";
+import { UserDataType } from "../../userInterface";
 import { FollowerType } from "../../userInterface";
 import { PersonalInfoType } from "../../userInterface";
 
 interface Props {
   isDarkMode: boolean;
-  data: UserData | undefined;
+  data: UserDataType | undefined;
   followersArray: FollowerType[];
   personalInfoArray: PersonalInfoType[];
   date: string | undefined;
