@@ -5,6 +5,9 @@ import UserSearchBar from "./Components/UserSearchBar/UserSearchBar";
 import UserInfo from "./Components/UserInfo/UserInfo";
 import axiosClient from "./axiosClient";
 import { v4 as uuidv4 } from "uuid";
+import { UserData } from "./userInterface";
+import { FollowerType } from "./userInterface";
+import { PersonalInfoType } from "./userInterface";
 
 import UserLocation from "./assets/icon-location.svg";
 import UserLocationDarkMode from "./assets/icon-location-DarkMode.svg";
@@ -15,14 +18,19 @@ import UserTwitterDarkMode from "./assets/icon-twitter-DarkMode.svg";
 import UserCompany from "./assets/icon-company.svg";
 import UserCompanyDarkMode from "./assets/icon-company-DarkMode.svg";
 
+// need to catch errors
+// responsive design
+
 function App() {
   const [userName, setUserName] = useState<string>("octocat");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [data, setData] = useState<object | undefined>();
-  const [date, setDate] = useState<any>();
+  const [data, setData] = useState<UserData | undefined>();
+  const [date, setDate] = useState<string | undefined>();
 
-  const [followersArray, setFollowersArray] = useState<Array>([]);
-  const [personalInfoArray, setPersonalInfoArray] = useState<Array>([]);
+  const [followersArray, setFollowersArray] = useState<FollowerType[]>([]);
+  const [personalInfoArray, setPersonalInfoArray] = useState<
+    PersonalInfoType[]
+  >([]);
 
   useEffect(() => {
     const followersArr = [];
@@ -87,7 +95,6 @@ function App() {
     }
 
     setPersonalInfoArray(personalInfoArr);
-
     setFollowersArray(followersArr);
   }, [data]);
 

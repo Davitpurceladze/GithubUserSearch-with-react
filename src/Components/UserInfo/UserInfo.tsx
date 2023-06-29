@@ -1,13 +1,16 @@
 import styles from "./UserInfo.module.css";
 import Followers from "./Followers/Followers";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
+import { UserData } from "../../userInterface";
+import { FollowerType } from "../../userInterface";
+import { PersonalInfoType } from "../../userInterface";
 
 interface Props {
   isDarkMode: boolean;
-  data: object | undefined;
-  followersArray: any;
-  personalInfoArray: any;
-  date: any;
+  data: UserData | undefined;
+  followersArray: FollowerType[];
+  personalInfoArray: PersonalInfoType[];
+  date: string | undefined;
 }
 
 const aboutBio = (data: any) => {
@@ -82,7 +85,7 @@ function UserInfo(props: Props) {
               : `${styles.userFollowersContainer} ${styles.userFollowersLightModeBackground}`
           }
         >
-          {props.followersArray.map((item: any) => (
+          {props.followersArray.map((item: FollowerType) => (
             <Followers
               isDarkMode={props.isDarkMode}
               name={item.name}
@@ -93,7 +96,7 @@ function UserInfo(props: Props) {
         </div>
 
         {/* personal information */}
-        {props.personalInfoArray.map((item: any) => (
+        {props.personalInfoArray.map((item: PersonalInfoType) => (
           <PersonalInfo
             isDarkMode={props.isDarkMode}
             LightModeIcon={item.LightModeIcon}

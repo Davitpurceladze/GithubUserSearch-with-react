@@ -2,9 +2,9 @@ import styles from "./PersonalInfo.module.css";
 
 interface Props {
   isDarkMode: boolean;
-  LightModeIcon: any;
-  DarkModeIcon: any;
-  info: any;
+  LightModeIcon: string;
+  DarkModeIcon: string;
+  info: string | null;
 }
 
 function PersonalInfo(props: Props) {
